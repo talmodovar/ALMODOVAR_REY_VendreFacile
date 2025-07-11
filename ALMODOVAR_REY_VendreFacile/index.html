@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VendreFacile - Petites Annonces Gratuites</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>VendreFacile</h1>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html">Accueil</a>
+                    <a href="favoris.html">Favoris</a>
+                    <a href="messagerie.html">Messages</a>
+                    <a href="profil.html">Profil</a>
+                    <a href="publication.html" class="btn-publish">Publier</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="search-container">
+                <h2>Trouvez tout ce que vous cherchez</h2>
+                <div class="search-bar">
+                    <input type="text" placeholder="Que recherchez-vous ?" id="searchInput">
+                    <select id="categoryFilter">
+                        <option value="">Toutes catégories</option>
+                        <option value="vehicules">Véhicules</option>
+                        <option value="immobilier">Immobilier</option>
+                        <option value="mode">Mode</option>
+                        <option value="maison">Maison & Jardin</option>
+                        <option value="loisirs">Loisirs</option>
+                        <option value="multimedia">Multimédia</option>
+                    </select>
+                    <input type="text" placeholder="Ville" id="locationFilter">
+                    <button onclick="rechercheEffectuee()" class="btn-search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="filters">
+            <div class="filter-container">
+                <h3>Filtres</h3>
+                <div class="filter-options">
+                    <div class="price-filter">
+                        <label>Prix</label>
+                        <input type="range" min="0" max="10000" value="5000" id="priceRange">
+                        <span>0€ - 10000€</span>
+                    </div>
+                    <button onclick="filtrageApplique()" class="btn-filter">Appliquer les filtres</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="announcements">
+            <div class="loading" id="loading" style="display: none;">
+                <p>Chargement des annonces...</p>
+            </div>
+            
+            <div class="announcements-grid" id="announcementsGrid">
+                <div class="announcement-card">
+                    <img src="images/i13.jpg" alt="iPhone 13">
+                    <div class="card-content">
+                        <h3>iPhone 13 Pro Max 256GB</h3>
+                        <p class="price">899€</p>
+                        <p class="location">Paris 75001</p>
+                        <button onclick="ajoutFavori(1)" class="btn-favorite">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="announcement-card">
+                    <img src="images/velo.jpg" alt="Vélo">
+                    <div class="card-content">
+                        <h3>Vélo de course Peugeot</h3>
+                        <p class="price">250€</p>
+                        <p class="location">Lyon 69001</p>
+                        <button onclick="ajoutFavori(2)" class="btn-favorite">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="announcement-card">
+                    <img src="images/canape.jpg" alt="Canapé">
+                    <div class="card-content">
+                        <h3>Canapé 3 places IKEA</h3>
+                        <p class="price">150€</p>
+                        <p class="location">Marseille 13001</p>
+                        <button onclick="ajoutFavori(3)" class="btn-favorite">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="announcement-card">
+                    <img src="images/peugeot-208-allure.jpg" alt="Voiture">
+                    <div class="card-content">
+                        <h3>Peugeot 208 2022</h3>
+                        <p class="price">8500€</p>
+                        <p class="location">Toulouse 31000</p>
+                        <button onclick="ajoutFavori(4)" class="btn-favorite">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="announcement-card">
+                    <img src="images/appart.jpg" alt="Appartement">
+                    <div class="card-content">
+                        <h3>Appartement 2 pièces</h3>
+                        <p class="price">750€/mois</p>
+                        <p class="location">Nice 06000</p>
+                        <button onclick="ajoutFavori(5)" class="btn-favorite">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="announcement-card">
+                    <img src="images/ps5-slim.jpg" alt="Console">
+                    <div class="card-content">
+                        <h3>PlayStation 5</h3>
+                        <p class="price">450€</p>
+                        <p class="location">Bordeaux 33000</p>
+                        <button onclick="ajoutFavori(6)" class="btn-favorite">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 VendreFacile. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

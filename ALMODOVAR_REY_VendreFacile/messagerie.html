@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messagerie - VendreFacile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>VendreFacile</h1>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html">Accueil</a>
+                    <a href="favoris.html">Favoris</a>
+                    <a href="messagerie.html">Messages</a>
+                    <a href="profil.html">Profil</a>
+                    <a href="publication.html" class="btn-publish">Publier</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="messaging-page">
+        <div class="messaging-container">
+            <div class="conversations-sidebar">
+                <div class="conversations-header">
+                    <h2>Conversations</h2>
+                    <button onclick="creationConversation()" class="btn-new-conversation">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="conversations-list">
+                    <div class="conversation-item active" onclick="selectConversation(1)">
+                        <img src="images/" alt="Marie Martin">
+                        <div class="conversation-info">
+                            <h3>Marie Martin</h3>
+                            <p>Bonjour, l'iPhone est-il encore disponible ?</p>
+                            <span class="time">14:30</span>
+                        </div>
+                        <div class="unread-badge">2</div>
+                    </div>
+
+                    <div class="conversation-item" onclick="selectConversation(2)">
+                        <img src="https://via.placeholder.com/50x50" alt="Pierre Durand">
+                        <div class="conversation-info">
+                            <h3>Pierre Durand</h3>
+                            <p>Merci pour la vente !</p>
+                            <span class="time">Hier</span>
+                        </div>
+                    </div>
+
+                    <div class="conversation-item" onclick="selectConversation(3)">
+                        <img src="https://via.placeholder.com/50x50" alt="Sophie Bernard">
+                        <div class="conversation-info">
+                            <h3>Sophie Bernard</h3>
+                            <p>Le vélo est-il encore disponible ?</p>
+                            <span class="time">15/03</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-area">
+                <div class="chat-header">
+                    <img src="https://via.placeholder.com/40x40" alt="Marie Martin">
+                    <div class="chat-user-info">
+                        <h3>Marie Martin</h3>
+                        <p>En ligne</p>
+                    </div>
+                    <div class="chat-actions">
+                        <button onclick="propositionPrix()" class="btn-price-offer">
+                            <i class="fas fa-tag"></i> Proposer un prix
+                        </button>
+                        <button onclick="suppressionConversation()" class="btn-delete-conversation">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="announcement-preview">
+                    <img src="images/i13.jpg" alt="iPhone">
+                    <div class="announcement-info">
+                        <h4>iPhone 13 Pro Max 256GB</h4>
+                        <p class="price">899€</p>
+                    </div>
+                </div>
+
+                <div class="messages-container" id="messagesContainer">
+                    <div class="message received">
+                        <div class="message-content">
+                            <p>Bonjour, l'iPhone est-il encore disponible ?</p>
+                            <span class="message-time">14:25</span>
+                        </div>
+                    </div>
+
+                    <div class="message sent">
+                        <div class="message-content">
+                            <p>Bonjour ! Oui, il est encore disponible. Êtes-vous intéressée ?</p>
+                            <span class="message-time">14:27</span>
+                        </div>
+                    </div>
+
+                    <div class="message received">
+                        <div class="message-content">
+                            <p>Parfait ! Serait-il possible de le voir en personne ?</p>
+                            <span class="message-time">14:30</span>
+                        </div>
+                    </div>
+
+                    <div class="price-offer received">
+                        <div class="offer-content">
+                            <i class="fas fa-tag"></i>
+                            <div>
+                                <p><strong>Proposition de prix</strong></p>
+                                <p class="offer-price">800€</p>
+                            </div>
+                            <div class="offer-actions">
+                                <button class="btn-accept">Accepter</button>
+                                <button class="btn-decline">Refuser</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message-input-container">
+                    <div class="message-input">
+                        <input type="text" id="messageInput" placeholder="Tapez votre message...">
+                        <button onclick="envoiMessage()" class="btn-send">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 VendreFacile. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

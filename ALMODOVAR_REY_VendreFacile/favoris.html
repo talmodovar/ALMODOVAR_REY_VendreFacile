@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Favoris - VendreFacile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>VendreFacile</h1>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html">Accueil</a>
+                    <a href="favoris.html">Favoris</a>
+                    <a href="messagerie.html">Messages</a>
+                    <a href="profil.html">Profil</a>
+                    <a href="publication.html" class="btn-publish">Publier</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="favorites-page">
+        <div class="favorites-container">
+            <div class="favorites-header">
+                <h1>Mes Favoris</h1>
+                <p>Vous avez <span id="favoriteCount">5</span> annonces en favoris</p>
+            </div>
+
+            <div class="favorites-filters">
+                <select id="sortFavorites">
+                    <option value="recent">Plus récents</option>
+                    <option value="price-asc">Prix croissant</option>
+                    <option value="price-desc">Prix décroissant</option>
+                    <option value="location">Localisation</option>
+                </select>
+                <button onclick="affichageFavoris()" class="btn-filter">
+                    <i class="fas fa-filter"></i> Filtrer
+                </button>
+            </div>
+
+            <div class="favorites-grid">
+                <div class="favorite-card">
+                    <div class="favorite-image">
+                        <img src="images/i13.jpg" alt="iPhone 13">
+                        <button onclick="retraitFavori(1)" class="btn-remove-favorite">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="favorite-content">
+                        <h3>iPhone 13 Pro Max 256GB</h3>
+                        <p class="price">899€</p>
+                        <p class="location">Paris 75001</p>
+                        <p class="date">Ajouté le 15/03/2024</p>
+                        <div class="favorite-actions">
+                            <button onclick="window.location.href='annonce.html'" class="btn-view">
+                                <i class="fas fa-eye"></i> Voir
+                            </button>
+                            <button onclick="window.location.href='messagerie.html'" class="btn-contact">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="favorite-card">
+                    <div class="favorite-image">
+                        <img src="images/velo.jpg" alt="Vélo">
+                        <button onclick="retraitFavori(2)" class="btn-remove-favorite">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="favorite-content">
+                        <h3>Vélo de course Peugeot</h3>
+                        <p class="price">250€</p>
+                        <p class="location">Lyon 69001</p>
+                        <p class="date">Ajouté le 14/03/2024</p>
+                        <div class="favorite-actions">
+                            <button onclick="window.location.href='annonce.html'" class="btn-view">
+                                <i class="fas fa-eye"></i> Voir
+                            </button>
+                            <button onclick="window.location.href='messagerie.html'" class="btn-contact">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="favorite-card">
+                    <div class="favorite-image">
+                        <img src="images/canape.jpg" alt="Canapé">
+                        <button onclick="retraitFavori(3)" class="btn-remove-favorite">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="favorite-content">
+                        <h3>Canapé 3 places IKEA</h3>
+                        <p class="price">150€</p>
+                        <p class="location">Marseille 13001</p>
+                        <p class="date">Ajouté le 12/03/2024</p>
+                        <div class="favorite-actions">
+                            <button onclick="window.location.href='annonce.html'" class="btn-view">
+                                <i class="fas fa-eye"></i> Voir
+                            </button>
+                            <button onclick="window.location.href='messagerie.html'" class="btn-contact">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="favorite-card">
+                    <div class="favorite-image">
+                        <img src="images/ps5-slim.jpg" alt="PlayStation">
+                        <button onclick="retraitFavori(6)" class="btn-remove-favorite">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="favorite-content">
+                        <h3>PlayStation 5</h3>
+                        <p class="price">450€</p>
+                        <p class="location">Bordeaux 33000</p>
+                        <p class="date">Ajouté le 10/03/2024</p>
+                        <div class="favorite-actions">
+                            <button onclick="window.location.href='annonce.html'" class="btn-view">
+                                <i class="fas fa-eye"></i> Voir
+                            </button>
+                            <button onclick="window.location.href='messagerie.html'" class="btn-contact">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="favorite-card">
+                    <div class="favorite-image">
+                        <img src="images/appart.jpg" alt="Appartement">
+                        <button onclick="retraitFavori(5)" class="btn-remove-favorite">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="favorite-content">
+                        <h3>Appartement 2 pièces</h3>
+                        <p class="price">750€/mois</p>
+                        <p class="location">Nice 06000</p>
+                        <p class="date">Ajouté le 08/03/2024</p>
+                        <div class="favorite-actions">
+                            <button onclick="window.location.href='annonce.html'" class="btn-view">
+                                <i class="fas fa-eye"></i> Voir
+                            </button>
+                            <button onclick="window.location.href='messagerie.html'" class="btn-contact">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="empty-favorites" id="emptyFavorites" style="display: none;">
+                <div class="empty-state">
+                    <i class="fas fa-heart-broken"></i>
+                    <h2>Aucun favori pour le moment</h2>
+                    <p>Parcourez les annonces et ajoutez-les à vos favoris pour les retrouver facilement ici.</p>
+                    <button onclick="window.location.href='index.html'" class="btn-browse">
+                        <i class="fas fa-search"></i> Parcourir les annonces
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 VendreFacile. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

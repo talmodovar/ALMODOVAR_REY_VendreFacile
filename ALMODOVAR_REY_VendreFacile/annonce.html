@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 13 Pro Max - VendreFacile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>VendreFacile</h1>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html">Accueil</a>
+                    <a href="favoris.html">Favoris</a>
+                    <a href="messagerie.html">Messages</a>
+                    <a href="profil.html">Profil</a>
+                    <a href="publication.html" class="btn-publish">Publier</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="announcement-detail">
+        <div class="announcement-container">
+            <div class="announcement-images">
+                <img src="images/i13.jpg" alt="iPhone 13 Pro Max" class="main-image">
+                <div class="thumbnail-gallery">
+                    <img src="images/vendeur.jpg" alt="Thumbnail 1">
+                    <img src="https://via.placeholder.com/100x100" alt="Thumbnail 2">
+                    <img src="https://via.placeholder.com/100x100" alt="Thumbnail 3">
+                </div>
+            </div>
+
+            <div class="announcement-info">
+                <h1>iPhone 13 Pro Max 256GB</h1>
+                <p class="price">899€</p>
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Paris 75001</p>
+                <p class="date"><i class="fas fa-calendar"></i> Publié le 15/03/2024</p>
+
+                <div class="announcement-actions">
+                    <button onclick="ajoutFavori(1)" class="btn-favorite-large">
+                        <i class="far fa-heart"></i> Ajouter aux favoris
+                    </button>
+                    <button onclick="modificationAnnonce()" class="btn-edit" style="display: none;">
+                        <i class="fas fa-edit"></i> Modifier
+                    </button>
+                    <button onclick="suppressionAnnonce()" class="btn-delete" style="display: none;">
+                        <i class="fas fa-trash"></i> Supprimer
+                    </button>
+                </div>
+
+                <div class="seller-info">
+                    <h3>Vendeur</h3>
+                    <div class="seller-profile">
+                        <img src="images/vendeur.jpg" alt="Profil vendeur">
+                        <div>
+                            <p><strong>Jean Dupont</strong></p>
+                            <p>Membre depuis 2022</p>
+                            <p>⭐⭐⭐⭐⭐ (4.8/5)</p>
+                        </div>
+                    </div>
+                    <button onclick="window.location.href='messagerie.html'" class="btn-contact">
+                        <i class="fas fa-envelope"></i> Contacter
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="announcement-description">
+            <h2>Description</h2>
+            <p>iPhone 13 Pro Max en excellent état, utilisé avec précaution. Écran sans rayures, batterie en parfait état (95% de capacité). Livré avec chargeur d'origine et coque de protection. Aucun problème technique à signaler.</p>
+            
+            <h3>Caractéristiques</h3>
+            <ul>
+                <li>Marque: Apple</li>
+                <li>Modèle: iPhone 13 Pro Max</li>
+                <li>Stockage: 256GB</li>
+                <li>Couleur: Bleu Alpin</li>
+                <li>État: Très bon</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 VendreFacile. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

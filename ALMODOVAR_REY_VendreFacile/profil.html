@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Profil - VendreFacile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>VendreFacile</h1>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html">Accueil</a>
+                    <a href="favoris.html">Favoris</a>
+                    <a href="messagerie.html">Messages</a>
+                    <a href="profil.html">Profil</a>
+                    <a href="publication.html" class="btn-publish">Publier</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="profile-page">
+        <div class="profile-container">
+            <div class="profile-sidebar">
+                <div class="profile-card">
+                    <img src="images/vendeur.jpg" alt="Photo de profil" class="profile-image">
+                    <h2>Jean Dupont</h2>
+                    <p>Membre depuis mars 2022</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-number">23</span>
+                            <span class="stat-label">Annonces</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4.8</span>
+                            <span class="stat-label">Note</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-menu">
+                    <a href="#" class="menu-item active" onclick="showSection('info')">
+                        <i class="fas fa-user"></i> Informations
+                    </a>
+                    <a href="#" class="menu-item" onclick="showSection('announcements')">
+                        <i class="fas fa-list"></i> Mes annonces
+                    </a>
+                    <a href="#" class="menu-item" onclick="showSection('settings')">
+                        <i class="fas fa-cog"></i> Paramètres
+                    </a>
+                    <a href="#" class="menu-item" onclick="deconnexionUtilisateur()">
+                        <i class="fas fa-sign-out-alt"></i> Déconnexion
+                    </a>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div id="info-section" class="content-section active">
+                    <h2>Informations personnelles</h2>
+                    
+                    <form class="profile-form">
+                        <div class="form-group">
+                            <label for="firstName">Prénom</label>
+                            <input type="text" id="firstName" value="Jean">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Nom</label>
+                            <input type="text" id="lastName" value="Dupont">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" value="jean.dupont@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" value="06 12 34 56 78">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Adresse</label>
+                            <input type="text" id="address" value="123 Rue de la Paix, 75001 Paris">
+                        </div>
+
+                        <button type="button" onclick="modificationProfil()" class="btn-save">
+                            <i class="fas fa-save"></i> Enregistrer les modifications
+                        </button>
+                    </form>
+                </div>
+
+                <div id="announcements-section" class="content-section">
+                    <h2>Mes annonces</h2>
+                    
+                    <div class="announcements-list">
+                        <div class="announcement-item">
+                            <img src="https://via.placeholder.com/100x100" alt="iPhone">
+                            <div class="announcement-details">
+                                <h3>iPhone 13 Pro Max 256GB</h3>
+                                <p class="price">899€</p>
+                                <p class="status">Actif</p>
+                                <p class="views">127 vues</p>
+                            </div>
+                            <div class="announcement-actions">
+                                <button onclick="modificationAnnonce()" class="btn-edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button onclick="suppressionAnnonce()" class="btn-delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="announcement-item">
+                            <img src="https://via.placeholder.com/100x100" alt="Vélo">
+                            <div class="announcement-details">
+                                <h3>Vélo de course Peugeot</h3>
+                                <p class="price">250€</p>
+                                <p class="status">Actif</p>
+                                <p class="views">45 vues</p>
+                            </div>
+                            <div class="announcement-actions">
+                                <button onclick="modificationAnnonce()" class="btn-edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button onclick="suppressionAnnonce()" class="btn-delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="settings-section" class="content-section">
+                    <h2>Paramètres du compte</h2>
+                    
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <label>Notifications par email</label>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Visibilité du profil</label>
+                            <select>
+                                <option value="public">Public</option>
+                                <option value="private">Privé</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="newPassword">Nouveau mot de passe</label>
+                            <input type="password" id="newPassword">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirmer le mot de passe</label>
+                            <input type="password" id="confirmPassword">
+                        </div>
+
+                        <div class="danger-zone">
+                            <h3>Zone dangereuse</h3>
+                            <button onclick="suppressionCompte()" class="btn-danger">
+                                <i class="fas fa-trash"></i> Supprimer mon compte
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 VendreFacile. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
